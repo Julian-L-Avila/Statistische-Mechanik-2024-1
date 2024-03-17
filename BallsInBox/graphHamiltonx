@@ -1,9 +1,0 @@
-set grid
-
-set xlabel 'q'
-set ylabel 'p'
-set zlabel 'H'
-
-sp 'hamiltonx.dat' u 1:2:3 w l tit 'Data'
-
-pause -1

@@ -125,15 +125,15 @@ position_data = np.vstack([time_t, positionsx1, positionsy1]).T
 momentum_data = np.vstack([time_t, positionsx1, positionsy1, momentax1, momentay1]).T
 lagrangianx_data = np.vstack([time_t, positionsx1, velocityx, lagrangianx]).T
 lagrangiany_data = np.vstack([time_t, positionsy1, velocityy, lagrangiany]).T
-hamiltonx_data = np.vstack([positionsx1, momentax1, hamiltonx]).T
-hamiltony_data = np.vstack([positionsy1, momentay1, hamiltony]).T
+hamiltonx_data = np.vstack([time_t, positionsx1, momentax1, hamiltonx]).T
+hamiltony_data = np.vstack([time_t, positionsy1, momentay1, hamiltony]).T
 
 np.savetxt("global.dat", data, delimiter="\t", header="time\tx\ty\tvx\tvy\tpx\tpy")
 np.savetxt("position.dat", position_data, delimiter="\t", header="time\tx\ty")
 np.savetxt("momentum.dat", momentum_data, delimiter="\t", header="time\tx\ty\tpx\tpy")
-np.savetxt("lagrangiax.dat", lagrangianx_data, delimiter="\t", header="time\tx\tv\tL")
-np.savetxt("lagrangiay.dat", lagrangiany_data, delimiter="\t", header="time\ty\tv\tL")
-np.savetxt("hamiltonx.dat", hamiltonx_data, delimiter="\t", header="x\tp\tH")
-np.savetxt("hamiltony.dat", hamiltony_data, delimiter="\t", header="y\tp\tH")
+np.savetxt("lagrangianx.dat", lagrangianx_data, delimiter="\t", header="t\tx\tv\tL")
+np.savetxt("lagrangiany.dat", lagrangiany_data, delimiter="\t", header="t\ty\tv\tL")
+np.savetxt("hamiltonx.dat", hamiltonx_data, delimiter="\t", header="t\tx\tp\tH")
+np.savetxt("hamiltony.dat", hamiltony_data, delimiter="\t", header="t\ty\tp\tH")
 
 print("Data saved")
